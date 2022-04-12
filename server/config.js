@@ -8,4 +8,4 @@ export default {
     password: 'root',
     database: 'mtg_scan',
   },
-}
+};

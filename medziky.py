@@ -2,7 +2,7 @@
 
 import modules.servo as servo
 import modules.camera as camera
-import modules.scannerapi as scanner
+import modules.apiscanner as scanner
 
 def clean():
 	camera.stop()
@@ -11,13 +11,13 @@ def clean():
 def move_card():
 	servo.run_forward(0.85, 0.7)
 	servo.run_backward(1, 0.5)
-	servo.pause(0.5)
+	# servo.pause(2)
 
 def run():
 	camera.setup(True)
 	servo.setup()
 
-	for _ in range(5):
+	for _ in range(10):
 		move_card()
 		servo.pause(1.5)
 		scanner.add_path(camera.capture())
